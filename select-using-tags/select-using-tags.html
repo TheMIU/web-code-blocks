@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Selection</title>
+</head>
+
+<body>
+    <h3>Select by Vehicle :</h3>
+    <label>
+        <input type="radio" class="vehicle-checkbox" value="all-vehicles" name="vehicle" checked> All vehicles
+    </label>
+    <label>
+        <input type="radio" class="vehicle-checkbox" value="sedan" name="vehicle"> Sedan
+    </label>
+    <label>
+        <input type="radio" class="vehicle-checkbox" value="suv" name="vehicle"> SUV
+    </label>
+    <label>
+        <input type="radio" class="vehicle-checkbox" value="truck" name="vehicle"> Truck
+    </label>
+    <label>
+        <input type="radio" class="vehicle-checkbox" value="hatchback" name="vehicle"> Hatchback
+    </label>
+
+    <h3>Select by Colors:</h3>
+    <label>
+        <input type="radio" class="vehicle-checkbox" value="all-colors" name="color" checked> All colors
+    </label>
+    <label>
+        <input type="radio" class="vehicle-checkbox" value="red" name="color"> Red
+    </label>
+    <label>
+        <input type="radio" class="vehicle-checkbox" value="blue" name="color"> Blue
+    </label>
+    <label>
+        <input type="radio" class="vehicle-checkbox" value="black" name="color"> Black
+    </label>
+    <label>
+        <input type="radio" class="vehicle-checkbox" value="white" name="color"> White
+    </label>
+    <label>
+        <input type="radio" class="vehicle-checkbox" value="green" name="color"> Green
+    </label>
+
+    <br>
+    <br>
+    <h3>Vehicles : </h3>
+    <div data-tags="sedan,red">Sedan - Red</div>
+    <div data-tags="suv,blue">SUV - Blue</div>
+    <div data-tags="truck,black">Truck - Black</div>
+    <div data-tags="hatchback,white">Hatchback - White</div>
+    <div data-tags="sedan,blue">Sedan - Blue</div>
+    <div data-tags="suv,black">SUV - Black</div>
+    <div data-tags="truck,red">Truck - Red</div>
+    <div data-tags="hatchback,green">Hatchback - Green</div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

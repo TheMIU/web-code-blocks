@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  background: #121212;
+  cursor: none;
+}
+
+.cursor {
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+.cursor--large {
+  --size: 40px;
+  border: 1px solid #ff3c3c;
+}
+.cursor--small {
+  --size: 10px;
+  background: #ff3c3c;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Disabled</title>
+
+    <!-- prism.js code styles -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism-okaidia.css" rel="stylesheet">
+</head>
+
+<body style="padding: 20px;">
+    <h1>You can't select this texts</h1>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque voluptates eius quos aliquid quo ipsum expedita
+        reprehenderit tempore possimus sunt veritatis dolorem dolorum sapiente, pariatur labore animi debitis
+        accusantium nihil?
+    </p>
+
+    <pre><code id="codeToCopy" class="language-javascript">
+    // Create a function to disable text selection
+    function disableTextSelection() {
+        // Function to prevent default action for mouse events
+        function preventDefaultAction(event) {
+            event.preventDefault();
+        }
+
+        // Disable text selection for mouse events
+        document.addEventListener('selectstart', preventDefaultAction); // For selection with the mouse
+        document.addEventListener('mousedown', preventDefaultAction); // For general mousedown events
+    }
+
+    // Call the function to disable text selection
+    disableTextSelection();
+    </code></pre>
+
+    <button id="copyButton"
+        style="padding: 10px 20px; background-color: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer;">
+        Copy Code
+    </button>
+
+</body>
+
+<!-- prism.js code styles -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
+
+<!-- script to disable select -->
+<script src="disable_select.js"></script>
+
+<!-- copy code -->
+<script>
+    document.getElementById('copyButton').addEventListener('click', function () {
+        const codeToCopy = document.getElementById('codeToCopy');
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(codeToCopy);
+        selection.removeAllRanges();
+        selection.addRange(range);
+
+        try {
+            const successful = document.execCommand('copy');
+            const message = successful ? 'Code copied to clipboard!' : 'Unable to copy code.';
+            alert(message);
+        } catch (err) {
+            alert('Error copying code:', err);
+        }
+
+        selection.removeAllRanges();
+    });
+</script>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Cookie Example</title>
+</head>
+
+<body>
+
+    <h2>🍪 Cookie Example</h2>
+    <a href="https://www.w3schools.com/js/js_cookies.asp"> 🔗 JavaScript Cookies</a>
+
+    <br>
+    <br>
+
+    <label for=" cookieValueInput">Cookie Value:</label>
+        <input type="text" id="cookieValueInput" placeholder="Enter cookie value">
+        <button onclick="setCookie('testCookie', document.getElementById('cookieValueInput').value, 365)">Set
+            Cookie</button>
+        <button onclick="getCookie('testCookie')">Get Cookie</button>
+        <button onclick="clearCookie('testCookie')">Clear Cookie</button>
+        <p id="cookieValue"></p>
+
+        <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Check elements appeared in the screen</h1>
+    <h3>check the console logs & scroll down</h3>
+
+    <h1 id="text1" style="color: red;">
+        test 1
+    </h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat error sit labore corporis temporibus aliquam
+        nostrum, esse consequuntur, quos quasi hic optio magnam! Placeat non maxime iure. Expedita, necessitatibus!
+        Perspiciatis!
+    </p>
+
+    <h1>
+        test
+    </h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat error sit labore corporis temporibus aliquam
+        nostrum, esse consequuntur, quos quasi hic optio magnam! Placeat non maxime iure. Expedita, necessitatibus!
+        Perspiciatis!
+    </p>
+
+    <h1>
+        test
+    </h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat error sit labore corporis temporibus aliquam
+        nostrum, esse consequuntur, quos quasi hic optio magnam! Placeat non maxime iure. Expedita, necessitatibus!
+        Perspiciatis!
+    </p>
+
+    <h1>
+        test
+    </h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat error sit labore corporis temporibus aliquam
+        nostrum, esse consequuntur, quos quasi hic optio magnam! Placeat non maxime iure. Expedita, necessitatibus!
+        Perspiciatis!
+    </p>
+
+
+    <h1 id="text2" style="color: rgb(0, 255, 34);">
+        test 2
+    </h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat error sit labore corporis temporibus aliquam
+        nostrum, esse consequuntur, quos quasi hic optio magnam! Placeat non maxime iure. Expedita, necessitatibus!
+        Perspiciatis!
+    </p>
+
+    <h1>
+        test
+    </h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat error sit labore corporis temporibus aliquam
+        nostrum, esse consequuntur, quos quasi hic optio magnam! Placeat non maxime iure. Expedita, necessitatibus!
+        Perspiciatis!
+    </p>
+
+    <h1>
+        test
+    </h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat error sit labore corporis temporibus aliquam
+        nostrum, esse consequuntur, quos quasi hic optio magnam! Placeat non maxime iure. Expedita, necessitatibus!
+        Perspiciatis!
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat error sit labore corporis temporibus aliquam
+        nostrum, esse consequuntur, quos quasi hic optio magnam! Placeat non maxime iure. Expedita, necessitatibus!
+        Perspiciatis!
+    </p>
+
+    <h1 id="text3" style="color: rgb(0, 47, 255);">
+        test 3
+    </h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat error sit labore corporis temporibus aliquam
+        nostrum, esse consequuntur, quos quasi hic optio magnam! Placeat non maxime iure. Expedita, necessitatibus!
+        Perspiciatis!
+    </p>
+
+
+
+    <script>
+        console.log("Visibility check when scroll");
+        function isElementInView(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function checkVisibilityAndLog() {
+            // Check if the element is in view
+            const text1IsInView = isElementInView(document.getElementById('text1'));
+            const text2IsInView = isElementInView(document.getElementById('text2'));
+            const text3IsInView = isElementInView(document.getElementById('text3'));
+
+            // Log 'true' to the console if the element is in view, otherwise log 'false'
+            console.log("1:", text1IsInView + "| 2:", text2IsInView + "| 3:", text3IsInView);
+        }
+
+        // Check and log when scrolling
+        window.addEventListener('scroll', checkVisibilityAndLog);
+
+        // Initial check on load
+        window.addEventListener('load', checkVisibilityAndLog);
+    </script>
+</body>
+
+</html>

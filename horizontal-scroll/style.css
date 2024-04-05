@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+}
+
+.outer {
+    overflow-x: hidden;
+}
+
+.slider {
+    display: flex;
+    width: 300vw;
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+
+    .inner {
+        position: relative;
+        display: flex;
+        align-items: end;
+
+        .content {
+            padding: 200px;
+        }
+    }
+}

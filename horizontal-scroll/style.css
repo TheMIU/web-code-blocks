@@ -8,7 +8,7 @@ body {
 
 .slider {
     display: flex;
-    width: 300vw;
+    width: 400vw;
 }
 
 section {
@@ -18,10 +18,14 @@ section {
     .inner {
         position: relative;
         display: flex;
-        align-items: end;
+        align-items: center;
+        justify-content: center;
+
+        height: 100%;
+        width: 100vw;
 
         .content {
-            padding: 200px;
+            padding: 20px;
         }
     }
 }

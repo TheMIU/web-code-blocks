@@ -14,7 +14,7 @@ let tl = gsap.timeline({
 })
 
 tl.to(slider, {
-    xPercent: -66
+    xPercent: -75
 })
 
 // smooth scroll
